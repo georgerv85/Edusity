@@ -1,0 +1,81 @@
+.programm-section{ /* 1ο div το έχω στο 100% */
+    /* background-color: yellow; */
+    padding: 40px 0; /* το περιεχόμενο θέλω να έχει απόσταση απο πάνω και κάτω */;
+}
+
+.programm{
+    width: 80%; /* περιορίζω το 2ο div που θα έχω τις φωτογραφίες με width ή margin */
+    /* background-color: brown; */
+    margin: 0 auto; /* ευθυγραμίζω στο κέντρο */
+}
+
+.row{ /* Βάζω row για να ξεχωρίσω τον χώρο μου */
+    /* border: solid 1px black; */
+    text-align: center;
+    padding: 15px 0;
+}
+
+.image-container{ 
+    display: flex;  /* Για να πάνε τα image το ένα δίπλα στο άλλο!   !! Η Εντολή flex πάει πάντα στον πατέρα */
+    justify-content: space-between; /* κάνει την οριζόντια στοίχιση και μοιράζει το κενό μεταξύ */
+}
+
+.programm-box{
+    /* border: 1px solid black; */
+    width: 30%; /* Απο το 100% του programm διαιρώ δια 3 αφού έχω 3 box! Βάζω 31% για να αφήσω και λίγο κενό */
+    /* ή διαφορετικά μπορώ να βάλω το flex-basis */
+    /* flex-basis: 30%; οταν είναι οριζόντια η στοίχιση 30% και μόλις πάει κάθετη η στοιχιση αυτόματα πάει στο 100%, άρα στο index.css δεν χρει'αζεται width 100% */
+
+    /* border: solid 1px black; */
+
+    position: relative; /* Συνδέεται με το description. Σε σχέση πάντα με τον πατέρα μπαίνει η περιγραφή */
+}
+
+.photo{     /* ορίζω το μέγεθος της εικόνας μέσα στο programm box */
+    width: 100%;
+    display: block;  /* λειτουργεί σαν κουτί - box */
+    border-radius: 20px;
+}
+
+.row h2{
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.description{
+    /* background-color: red; */
+
+    position:absolute; /* Συνδέεται με το position: relative του πατέρα - programm-box */
+   
+    /* right: 0;       Οι συντεταγμένες Ως προς τον πατέρα programm-box
+    bottom: 10%;    Οι συντεταγμένες Ως προς τον πατέρα programm-box */
+
+    /* --- το κάνω να πιάσει όλη την φωτογραφία το description */
+
+    width: 100%;   /* Για να καλύψει όλο την φωτογραφία, πάντα σε σχέση με τον πατέρα programm-box (θέλω να έχεις διαστάσεις όσο ο πατέρας) */
+    height: 100%;  /* Για να καλύψει όλο την φωτογραφία, πάντα σε σχέση με τον πατέρα programm-box */
+
+    top: 0; /* να ξεκινάει απο πάνω αριστερά */ 
+    left: 0;
+
+    background-color: rgba(40, 153, 190, 0.4); /* Χρώμα με opacity που είναι το alpha δλδ το 0.3 */
+
+    display: flex;          /* κάθετη στοίχιση / πάει το ένα δίπλα στο άλλο*/
+    flex-direction: column; /* Αντιστρέφω το direction, πάει το ένα κάτω απο το άλλο */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+    opacity: 0; /* για ναεξαφανίσω το μαρκάρισμα και όταν πάει πάνω το ποντίκι να εμφανίζεται */
+    padding-top: 30%; /* για να είναι 30% απο πάνω με βάση όμως την στοίχιση */
+}
+
+.programm-box:hover .description{ /* θέλω όταν κάνω hover να επηρεάσει το opacity στο .description */
+    opacity: 1; /* εμφανίζεται */
+    transition: 1s; /* σταδιακή εμφάνιση */
+    padding-top: 0%; /* επανέρχεται στην θέση 0 με βάση την στοίχιση - αν βάλω να έρχεται μέχρι το 10% θα πέφτει πιο χαμηλά σε σχέση με το κέντρο */
+}
+
+.icon{
+    width: 10%; /* με βάση τον πατέρα, δηλαδή το 100% θα έπιανε όλο το box */
+}

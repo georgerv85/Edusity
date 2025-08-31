@@ -1,0 +1,83 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+html,body{
+    scroll-behavior: smooth;
+}
+/* a{
+    color: white;
+    text-decoration: none;
+    
+} */
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.container{
+    padding: 0 10%; 
+    /* το περιεχόμενο θα έχει 10% απόσταση από τα άκρα */
+}
+
+.btn{
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    display: inline-block; /* inline πιάνει όσο χώρο χρειάζεται και block υπακούει στις διαστάσεις - κουτί */
+}
+
+.menu-icon{
+    width: 30px;
+    cursor: pointer; /* εμφανίζει το χέρι για επιλογή */
+    display: none; /* δεν θέλω να εμφανίζεται στην μεγάλη οθόνη */
+}
+
+.hide-menu{  /* αν το x είναι false τότε εφαρμόζεται αυτή η class */
+    right: -200px;
+}
+
+@media (max-width:768px){
+
+    .menu-icon{
+        display: block; /* για να εμφανιστεί */
+    }
+
+    nav ul{
+        position: fixed; /*για να εμφανιστεί το menu πάνω δεξιά */
+        top: 0;
+        right: 0px;
+        background-color: blue;
+        width: 200px;
+        height: 100%;
+        padding-top: 80px;
+        padding-left: 50px;
+
+        z-index: -1; /* πάει σε δεύτερο πλάνο, σε συνδυασμό με το Navbar.css στο nav έχω z-index: 10 */
+
+        transition: 0.5s;
+    }
+
+    nav ul li{
+        display: block !important; /*Βάζει το ένα κάτω απο το άλλο */
+        margin: 10px !important;
+    }
+
+    .programm-box{ /* Σε συνδυασμό με το .image-container */
+        width: 100% !important;
+        margin-bottom: 20px; /* για να έχει κενό το κάθε κουτί απο κάτω */
+    }
+    
+    .image-container{ 
+        /* ισχύει ότι υπάρχει στο Programm.css απλά αφαιρώ το display:flex για να μπορέσει να πάει απο κάτω */
+        flex-wrap: wrap !important; /* αν δεν χωράει βάλε το απο κάτω */
+
+        /* ή για να πάει το ένα κάτω απο το άλλο μπορώ να κάνω το flex-direction */
+
+        /* flex-direction: column !important; */
+    }
+
+
+}
+

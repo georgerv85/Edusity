@@ -1,0 +1,43 @@
+nav{
+    /* background-color: blue; */
+    display: flex; /* Default βάζει το ένα δίπλα στο άλλο,  δλδ το logo και το ul*/
+    justify-content: space-between;
+    /* justify-content space-between ορίζει το κενό που δημιουργήθηκε μεταξύ logo και ul */
+    /* height: 80px; */
+    /* align-items: center; */
+    /* align-items: center; κάθετη στοίχιση για το logo και το ul μέσα στο height 80px !!! μόνο σε Flex*/
+    padding-top: 20px !important;
+    padding-bottom: 20px !important; /* Βάζω !important γιατί έρχεται σε σύγκρουση με index.css */
+    color: white;
+    position: fixed; /* για να μείνει σταθερό το nav  στο scroll */
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    z-index: 10; /* στο index.css θα βάλω στο nav ul -1 ώστε σε οθόνη< 768 να πάει σε δεύτερο πλάνο */
+}
+
+.logo{
+    width: 120px;
+    /* background-color: red; */
+}
+
+/* .test{
+    background-color: green;
+} */
+
+nav ul{
+    list-style: none;
+    /* display: flex; για να βάλω τα li το ένα δίπλα στο άλλο, όμως θα χρησιμοποιήσω τον παρακάτω τρόπο στο nav li */
+}
+
+nav ul li{
+    display: inline-block;
+    /* display: inline-block; Το ένα δίπλα στο άλλο και επιπλέον γίνεται κουτί */
+    margin: 0 10px;
+}
+
+.blue-nav{
+    background-color: blue;
+    transition: 0.8s;
+}
